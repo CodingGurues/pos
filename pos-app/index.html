@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MobileHub POS SaaS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-dot"></div>
+          <div>
+            <h1>MobileHub POS</h1>
+            <p>Wholesale SaaS</p>
+          </div>
+        </div>
+        <nav id="sidebar-nav" class="sidebar-nav"></nav>
+        <div class="sidebar-footer">
+          <button id="theme-toggle" class="btn btn-secondary" type="button">🌙 Dark Mode</button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <label class="search-wrap">
+            <input id="global-search" type="search" placeholder="Search products, invoices, customers..." />
+          </label>
+          <div class="topbar-actions">
+            <button id="db-export" class="btn btn-secondary" type="button">Export DB</button>
+            <label class="btn btn-secondary file-input-btn">
+              Import DB
+              <input id="db-import" type="file" accept=".sqlite,.db" />
+            </label>
+            <div class="profile-pill">
+              <span class="avatar">A</span>
+              <div>
+                <strong>Admin User</strong>
+                <small>Owner</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section id="dashboard-view" class="view active"></section>
+        <section id="inventory-view" class="view"></section>
+        <section id="customers-view" class="view"></section>
+        <section id="invoices-view" class="view"></section>
+        <section id="vendors-view" class="view"></section>
+        <section id="reports-view" class="view"></section>
+      </main>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+    <div id="confirm-modal" class="modal hidden">
+      <div class="modal-card">
+        <h3 id="confirm-title">Confirm action</h3>
+        <p id="confirm-message">Are you sure?</p>
+        <div class="modal-actions">
+          <button id="confirm-cancel" class="btn btn-secondary" type="button">Cancel</button>
+          <button id="confirm-ok" class="btn btn-primary" type="button">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/sql-wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
